@@ -1,9 +1,8 @@
 
 #include "PGMimageProcessor.h"
-#include "ConnectedComponent.h"
 
 
-std::vector<MBRSHI002::ConnectedComponent>comps;
+
 
 MBRSHI002::PGMimageProcessor::PGMimageProcessor(std::string InputFile){
     //intialize input file
@@ -251,8 +250,8 @@ int MBRSHI002::PGMimageProcessor::extractComponents(unsigned char threshold, int
   }
   
   
- // std::cout<< counter<<std::endl;
-  //std::cout<< comps.size() <<std::endl;
+  std::cout<< counter<<std::endl;
+  std::cout<< comps.size() <<std::endl;
 
 
 

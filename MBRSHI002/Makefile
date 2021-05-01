@@ -13,17 +13,11 @@ OBJDIR = obj
 #$(BINDIR)/frames: $(OBJDIR)/driver.o $(OBJDIR)/FrameSequence.o
 	
 
-findcomp:  ConnectedComponent.o PGMImageProcessor.o driver.o 
-	$(CC)  ConnectedComponent.o PGMImageProcessor.o driver.o  -o findcomp $(LIBS) -std=c++2a
-
-testing: ConnectedComponent.o PGMImageProcessor.o TestCases.o  
-	$(CC)  ConnectedComponent.o PGMImageProcessor.o TestCases.o  -o testing $(LIBS) -std=c++2a
+findcomp:  ConnectedComponent.o PGMImageProcessor.o driver.o
+	$(CC)  ConnectedComponent.o PGMImageProcessor.o driver.o -o findcomp $(LIBS) -std=c++2a
 
 driver.o: $(SRCDIR)/driver.cpp 
 	$(CC) -c $(SRCDIR)/driver.cpp
-
-TestCases.o: $(SRCDIR)/TestCases.cpp
-	$(CC) -c $(SRCDIR)/TestCases.cpp
 
 PGMImageProcessor.o: $(SRCDIR)/PGMImageProcessor.cpp
 	$(CC) -c $(SRCDIR)/PGMImageProcessor.cpp
@@ -41,10 +35,5 @@ clean:
 run:
 	./findcomp -s 3 153468 -t 200 -p -w out.pgm ./images/chess.pgm
 
-
-test:
-	./testing
-	
 install: 
 	@mv $(BINDIR)/findcomp ~/bin
-	

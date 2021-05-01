@@ -27,7 +27,7 @@ namespace MBRSHI002{
     int cols;
     int max;
     int min;
-    
+    std::vector<ConnectedComponent>comps;
     //Default Constructor
     PGMimageProcessor(void);
     //Constructor
